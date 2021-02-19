@@ -16,7 +16,7 @@ public class Principal {
 		        }
 		    }
 		} catch (Exception e) {
-		    // se o nimbus n„o estiver disponÌvel vai manter o lookandfeel padr„o
+		    // se o nimbus n√£o estiver dispon√≠vel vai manter o lookandfeel padr√£o
 		}
 		
 		new InterfaceGrafica();
