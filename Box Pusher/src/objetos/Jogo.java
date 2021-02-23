@@ -73,81 +73,71 @@ public class Jogo {
 	}
 	
 	// método que movimenta o personagem dentro da matriz
-	public void movimentaPersonagem(KeyEvent e) {
-		switch (e.getKeyCode()) {
+	public void movimentaPersonagem(int e) {
+		switch (e) {
 		case KeyEvent.VK_UP:
 			if (player.getPosicaoY() > 0)
-				if (config[player.getPosicaoX()][player.getPosicaoY()-1] != null) {
+				if (config[player.getPosicaoX()][player.getPosicaoY()-1] != null)
 					// verifica se tem uma caixa e a possibilidade de movê-la
-					if (config[player.getPosicaoX()][player.getPosicaoY()-1].getDado() != null) {
+					if (config[player.getPosicaoX()][player.getPosicaoY()-1].getDado() != null)
 						if (config[player.getPosicaoX()][player.getPosicaoY()-1].getDado().toString().contains("Caixa")
 								&& config[player.getPosicaoX()][player.getPosicaoY()-2].getDado() == null)
 							config[player.getPosicaoX()][player.getPosicaoY()-2].setDado(config[player.getPosicaoX()][player.getPosicaoY()-1].getDado());		
 						else return;
-					}
 					
 					// move o personagem pra cima
 					config[player.getPosicaoX()][player.getPosicaoY()].setDado(null);
 					player.setPosicaoY(player.getPosicaoY()-1);
 					config[player.getPosicaoX()][player.getPosicaoY()].setDado(player);
 					player.aumentaMovimentos();
-				}
 			break;
 		case KeyEvent.VK_DOWN:
 			if (player.getPosicaoY() < 3)
-				if (config[player.getPosicaoX()][player.getPosicaoY()+1] != null) {
+				if (config[player.getPosicaoX()][player.getPosicaoY()+1] != null)
 					// verifica se tem uma caixa e a possibilidade de movê-la
-					if (config[player.getPosicaoX()][player.getPosicaoY()+1].getDado() != null) {
+					if (config[player.getPosicaoX()][player.getPosicaoY()+1].getDado() != null)
 						if (config[player.getPosicaoX()][player.getPosicaoY()+1].getDado().toString().contains("Caixa")
 								&& config[player.getPosicaoX()][player.getPosicaoY()+2].getDado() == null)
 							config[player.getPosicaoX()][player.getPosicaoY()+2].setDado(config[player.getPosicaoX()][player.getPosicaoY()+1].getDado());		
 						else return;
-					}
 					
 					// move o personagem pra baixo
 					config[player.getPosicaoX()][player.getPosicaoY()].setDado(null);
 					player.setPosicaoY(player.getPosicaoY()+1);
 					config[player.getPosicaoX()][player.getPosicaoY()].setDado(player);
 					player.aumentaMovimentos();
-				}
 			break;
 		case KeyEvent.VK_LEFT:
-			if (player.getPosicaoX() > 0) {
-				if (config[player.getPosicaoX()-1][player.getPosicaoY()] != null) {
+			if (player.getPosicaoX() > 0)
+				if (config[player.getPosicaoX()-1][player.getPosicaoY()] != null)
 					// verifica se tem uma caixa e a possibilidade de movê-la
-					if (config[player.getPosicaoX()-1][player.getPosicaoY()].getDado() != null) {
+					if (config[player.getPosicaoX()-1][player.getPosicaoY()].getDado() != null)
 						if (config[player.getPosicaoX()-1][player.getPosicaoY()].getDado().toString().contains("Caixa")
 								&& config[player.getPosicaoX()-2][player.getPosicaoY()].getDado() == null)
 							config[player.getPosicaoX()-2][player.getPosicaoY()].setDado(config[player.getPosicaoX()-1][player.getPosicaoY()].getDado());		
 						else return;
-					}
 					
 					// move o personagem pra esquerda
 					config[player.getPosicaoX()][player.getPosicaoY()].setDado(null);
 					player.setPosicaoX(player.getPosicaoX()-1);
 					config[player.getPosicaoX()][player.getPosicaoY()].setDado(player);
 					player.aumentaMovimentos();
-				}
-			}
 			break;
 		case KeyEvent.VK_RIGHT:
-			if (player.getPosicaoX() < 3) {
-				if (config[player.getPosicaoX()+1][player.getPosicaoY()] != null) {
+			if (player.getPosicaoX() < 3)
+				if (config[player.getPosicaoX()+1][player.getPosicaoY()] != null)
 					// verifica se tem uma caixa e a possibilidade de movê-la
-					if (config[player.getPosicaoX()+1][player.getPosicaoY()].getDado() != null) {
+					if (config[player.getPosicaoX()+1][player.getPosicaoY()].getDado() != null)
 						if (config[player.getPosicaoX()+1][player.getPosicaoY()].getDado().toString().contains("Caixa")
 								&& config[player.getPosicaoX()+2][player.getPosicaoY()].getDado() == null)
 							config[player.getPosicaoX()+2][player.getPosicaoY()].setDado(config[player.getPosicaoX()+1][player.getPosicaoY()].getDado());		
 						else return;
-					}
 					
 					// move o personagem pra direita
 					config[player.getPosicaoX()][player.getPosicaoY()].setDado(null);
 					player.setPosicaoX(player.getPosicaoX()+1);
 					config[player.getPosicaoX()][player.getPosicaoY()].setDado(player);
 					player.aumentaMovimentos();
-				}			
-			}
 			break;
 		}
 	}

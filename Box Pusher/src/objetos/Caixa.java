@@ -8,7 +8,7 @@ public class Caixa {
 	private ImageIcon caixaFalseIcon = new ImageIcon("resource/CaixaF.png");
 	private ImageIcon caixaTrueIcon = new ImageIcon("resource/CaixaT.png");
 	
-	// método construtor
+	// m�todo construtor
 	public Caixa(int posicaoX, int posicaoY){
 		this.posicaoX = posicaoX;
 		this.posicaoY = posicaoY;

@@ -67,7 +67,7 @@ public class InterfaceGrafica extends JFrame {
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(KeyEvent e) {
-				jogo.movimentaPersonagem(e);
+				jogo.movimentaPersonagem(e.getKeyCode());
 
 				atualizaGraficoMatriz();
 				getContentPane().validate();
